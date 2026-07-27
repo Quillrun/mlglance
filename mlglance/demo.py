@@ -66,7 +66,8 @@ def run_demo(args):
 
     args.title = f"demo:{scenario}"
     args.total = STEPS
-    args.interval = 1
+    # leave args.interval as parsed — None (auto) by default, or the user's -n — so the
+    # demo dogfoods auto-cadence against the ~0.18s/step producer below.
     try:
         watch_loop(tmp, args)
     finally:
